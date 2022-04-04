@@ -1,0 +1,15 @@
+version: 0.2
+
+env:
+  variables:
+    REACT_APP_PERSON_NAME: "Curt Bryan"
+phases:
+  install:
+    commands:
+      - n 14
+  pre_build:
+    commands:
+      - ls
+  build:
+    commands:
+      - ls
