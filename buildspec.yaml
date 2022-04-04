@@ -3,13 +3,19 @@ version: 0.2
 env:
   variables:
     REACT_APP_PERSON_NAME: "Curt Bryan"
+    BUCKET_NAME: "uopx-aws-cp-curtbryan-testing"
 phases:
   install:
     commands:
       - n 14
   pre_build:
     commands:
-      - ls
+      - export REACT_APP_PERSON_NAME=$REACT_APP_PERSON_NAME
+      - npm ci
+      - npm run test
   build:
     commands:
-      - ls
+      - npm run build
+  post_build:
+    commands: 
+      - aws s3 cp --recursive ./build/. s3://$BUCKET_NAME
