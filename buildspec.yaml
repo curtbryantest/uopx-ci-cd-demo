@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    REACT_APP_PERSON_NAME: "Curt Bryan III"
+    REACT_APP_PERSON_NAME: "Tester McTesterson"
     BUCKET_NAME: "uopx-aws-cp-curtbryan-testing"
 phases:
   install:
